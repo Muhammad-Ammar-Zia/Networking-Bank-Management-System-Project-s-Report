@@ -1,4 +1,4 @@
-#include<iostream>//For non-parametric manipulators such as end of line manipulators
+#include<iostream>//For non-parametric manipulators such as end of line manipulators 
 using namespace std;
 #include"cstdlib" //For exit(0) function
 #include"iomanip" //For parametric manipulators such as setwidth(length) 
