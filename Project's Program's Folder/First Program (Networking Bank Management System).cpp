@@ -21,7 +21,7 @@ class Networking
 			system_control_Number_of_amplifiers;
 	public:
 		Networking(); //Default/Nullary Constructor declaration only
-		void Amplification(float user_input_distance_between_sender_and_receiver_device); 
+		void Amplification(long double user_input_distance_between_sender_and_receiver_device); 
 }; //End of 1st class, base class Networking
 Networking::Networking() //Networking class Constructor
 { 
@@ -36,13 +36,13 @@ Networking::Networking() //Networking class Constructor
 	pre_defined_Administrator_Class[0] = pre_defined_Server_Class[0] = 'D'; //Reserved for multicasting (one-to-many communication)
 	pre_defined_Administrator_Class[1] = pre_defined_Server_Class[1] = 'E';//Designed for experimental and research & cannot be used on public internet
 }
-void Networking::Amplification(float user_input_distance_between_sender_and_receiver_device) //Input is taken in Networking_Path (Helping_Functions)
+void Networking::Amplification(long double user_input_distance_between_sender_and_receiver_device) //Input is taken in Networking_Path (Helping_Functions)
 { //2nd, but parametric member function Amplification()
     system_control_distance_in_miles = user_input_distance_between_sender_and_receiver_device * 0.621371F;
-    if(system_control_distance_in_miles <= 30.0f) //Example (40-1)/30.0F = 39/30.0f = 1.3F miles etc.
+    if(system_control_distance_in_miles <= 30.0L) //Example (40-1)/30.0F = 39/30.0f = 1.3F miles etc.
 	    system_control_Number_of_amplifiers = 0;
 	else 
-    	system_control_Number_of_amplifiers = static_cast<int>( (system_control_distance_in_miles - 1) / 30.0f);
+    	system_control_Number_of_amplifiers = static_cast<int>( (system_control_distance_in_miles - 1) / 30.0L);
 }
 class Bank : public Networking
 { //2nd inherited class, Bank derived from Networking class
@@ -351,11 +351,11 @@ void Helping_Functions::Networking_Path()
 		}
 		else
 		{
-			     if(user_input_distance_between_sender_and_receiver_device>0 && user_input_distance_between_sender_and_receiver_device<=0.05F)
+			     if(user_input_distance_between_sender_and_receiver_device>0 && user_input_distance_between_sender_and_receiver_device<=0.05L)
 				system_control_networking_path = "Radio Frequency Technology";
-			else if(user_input_distance_between_sender_and_receiver_device>0.05f && user_input_distance_between_sender_and_receiver_device<=0.15F)
+			else if(user_input_distance_between_sender_and_receiver_device>0.05L && user_input_distance_between_sender_and_receiver_device<=0.15L)
 				system_control_networking_path = "Optical UWOC (Underwater Wireless Optical Communication)";
-			else if(user_input_distance_between_sender_and_receiver_device>0.25f && user_input_distance_between_sender_and_receiver_device<=1)
+			else if(user_input_distance_between_sender_and_receiver_device>0.25L && user_input_distance_between_sender_and_receiver_device<=1)
 				system_control_networking_path = "AUV (Autonomous Underwater Vehicle) Network";
 			else if(user_input_distance_between_sender_and_receiver_device>1 && user_input_distance_between_sender_and_receiver_device<=10)
 				system_control_networking_path = "UASN / UWASN (Underwater Wireless Sensor Network)";
@@ -396,11 +396,11 @@ void Helping_Functions::Networking_Path()
 		}
 		else
 		{
-			     if(user_input_distance_between_sender_and_receiver_device>0 && user_input_distance_between_sender_and_receiver_device<=0.01F)
+			     if(user_input_distance_between_sender_and_receiver_device>0 && user_input_distance_between_sender_and_receiver_device<=0.01L)
 				system_control_networking_path = "Bluetooth Wireless Network";
-			else if(user_input_distance_between_sender_and_receiver_device>0.01f && user_input_distance_between_sender_and_receiver_device<0.15f)
+			else if(user_input_distance_between_sender_and_receiver_device>0.01L && user_input_distance_between_sender_and_receiver_device<0.15L)
 	 			system_control_networking_path = "Wireless Router";
-			else if(user_input_distance_between_sender_and_receiver_device>0.15F && user_input_distance_between_sender_and_receiver_device<2)
+			else if(user_input_distance_between_sender_and_receiver_device>0.15L && user_input_distance_between_sender_and_receiver_device<2)
 				system_control_networking_path = "Wireless Access Point (WAP)";
 			else if(user_input_distance_between_sender_and_receiver_device>2 && user_input_distance_between_sender_and_receiver_device<5)
 				system_control_networking_path = "Wired-LAN";
@@ -442,7 +442,7 @@ void Helping_Functions::Networking_Path()
     			system_control_networking_path = "Deep Space Transit (DSN-Direct)";
   	  		else if(user_input_distance_between_sender_and_receiver_device>=55000000 && user_input_distance_between_sender_and_receiver_device<400000000)
  	 	  		system_control_networking_path = "Interplanetary Backbone";
-			else if(user_input_distance_between_sender_and_receiver_device>=400000000&&user_input_distance_between_sender_and_receiver_device<=25900000000)
+			else if(user_input_distance_between_sender_and_receiver_device>=400000000 && user_input_distance_between_sender_and_receiver_device<=25900000000)
   	  			system_control_networking_path = "Deep Space Network (DSN-Extended)";
 		} //End of 1st nested else part 
 	} //End of 1st outer else if part
